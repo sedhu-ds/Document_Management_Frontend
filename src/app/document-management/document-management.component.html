@@ -1,0 +1,14 @@
+<div>
+    <h2>Document Management</h2>
+    <div>
+      <h3>Upload Document</h3>
+      <input type="file" (change)="onFileSelected($event)">
+      <button (click)="uploadDocument()">Upload</button>
+    </div>
+    <div>
+      <h3>Existing Documents</h3>
+      <ul>
+        <li *ngFor="let document of documents">{{ document.title }}</li>
+      </ul>
+    </div>
+  </div>

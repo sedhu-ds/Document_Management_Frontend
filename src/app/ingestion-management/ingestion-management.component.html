@@ -1,0 +1,7 @@
+<div>
+    <h2>Ingestion Management</h2>
+    <div *ngFor="let ingestion of ingestions">
+      <p>Document ID: {{ ingestion.document_id }} - Status: {{ ingestion.status }}</p>
+      <button (click)="triggerIngestion(ingestion.document_id)" *ngIf="ingestion.status === 'pending'">Trigger Ingestion</button>
+    </div>
+  </div>

@@ -1,0 +1,19 @@
+<div *ngIf="authService.isAdmin()">
+    <h2>User Management</h2>
+    <div>
+      <h3>Add New User</h3>
+      <input type="text" [(ngModel)]="newUsername" placeholder="Username">
+      <select [(ngModel)]="newRole">
+        <option value="viewer">Viewer</option>
+        <option value="editor">Editor</option>
+        <option value="admin">Admin</option>
+      </select>
+      <button (click)="addUser()">Add User</button>
+    </div>
+    <div>
+      <h3>Existing Users</h3>
+      <ul>
+        <li *ngFor="let user of users">{{ user.username }} - {{ user.role }}</li>
+      </ul>
+    </div>
+  </div>
